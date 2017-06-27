@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Struts2 DTD -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.devMode" value="true" />
+	<package name="process" extends="struts-default">
+		<!-- Book -->
+	
+		<action name="BookPro" class="action.BookAction">
+			<result name="success">/bookstore/jsp/adminBooks.jsp</result>
+			<result name="cart">CartPro!UserInit</result>
+		</action>
+		
+		<action name="UserPro" class="action.UserAction">
+			<result name="success">/bookstore/jsp/adminUsers.jsp</result>
+		</action>
+		
+		<action name="OrderPro" class="action.OrderAction">
+			<result name="success">/bookstore/jsp/adminOrders.jsp</result>
+		</action>
+		<action name="OrderitemPro" class="action.OrderitemAction">
+			<result name="success">/bookstore/jsp/adminOrderitems.jsp</result>
+			<result name="user">/bookstore/jsp/userOrderitems.jsp</result>
+		</action>
+		
+		<action name="CartPro" class="action.CartAction">
+			<result name="success">/bookstore/jsp/adminCarts.jsp</result>
+			<result name="user">/bookstore/jsp/userCarts.jsp</result>
+		</action>
+		
+		<action name="AccountPro" class="action.AccountAction">
+			<result name="user">/bookstore/jsp/userInterface.jsp</result>
+			<result name="admin">/bookstore/jsp/adminInterface.jsp</result>
+			<result name="no">login.html</result>
+			<result name="logout">login.html</result>
+		</action>
+
+		<action name="PurchasePro" class="action.PurchaseAction">
+			<result name="success">/bookstore/jsp/userCarts.jsp</result>
+			<result name="user">/bookstore/jsp/userCarts.jsp</result>
+		</action>
+		
+		<action name="BookInfoPro" class="action.BookInfoAction">
+			<result name="success">/bookstore/jsp/image.jsp</result>
+			
+		</action>
+		
+		<action name="StatisticsPro" class="action.StatisticsAction">
+			<result name="book">/bookstore/jsp/statisticsByBook.jsp</result>	
+		</action>
+		
+		<action name="SearchPro" class="action.SearchAction">
+			<result name="success">/bookstore/jsp/searchResult.jsp</result>
+		</action>
+
+		<action name="*">
+			<result>/{1}.jsp</result>
+		</action>
+	</package>
+</struts>

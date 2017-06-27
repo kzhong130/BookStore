@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.Query" table="query">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="assigned" />
+		</id>
+		<property name="buyerId" type="int">
+			<column name="buyerId" />
+		</property>
+		<property name="time" type="java.lang.String">
+			<column name="time" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="address" />
+		</property>
+	</class>
+	
+	<sql-query name="QueryByUser" callable="true">             
+         {call QueryByUser(?)}             
+    </sql-query>  
+    
+    <sql-query name="QueryByBook" callable="true">             
+         {call QueryByBook(?)}             
+    </sql-query>           
+
+	<sql-query name="QueryByCatagory" callable="true">             
+         {call QueryByCatagory(?)}             
+    </sql-query>  	
+    
+	<sql-query name="QueryAll" callable="true">             
+         {call QueryAll}             
+    </sql-query>      
+	
+</hibernate-mapping>

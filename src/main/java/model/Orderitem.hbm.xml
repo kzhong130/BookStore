@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.Orderitem" table="orderitems">
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="assigned" />
+		</id>
+		<property name="orderId" type="int">
+			<column name="orderId" />
+		</property>
+		<property name="bookId" type="int">
+			<column name="bookId" />
+		</property>
+		<property name="amount" type="int">
+			<column name="amount" />
+		</property>
+	</class>
+	
+	  <sql-query name="deleteorder" callable="true">             
+                     
+            {call deleteorder(?)}             
+      </sql-query>           
+	
+</hibernate-mapping>
